@@ -33,11 +33,11 @@ Tengine 已完成对下列 ARM Cortex-A 系列处理器支持：
 
 通过 CUDA/TensorRT 已验证 NVIDIA 以下系列：
 
-- NANO
-- TX1
-- TX2
-- XAVIER NX
-- XAVIER AGX
+- Jetson NANO
+- Jetson TX1
+- Jetson TX2
+- Jetson XAVIER NX
+- Jetson XAVIER AGX
 
 通过 OpenCL 已验证以下型号：
 
@@ -50,6 +50,10 @@ Tengine 已完成对下列 ARM Cortex-A 系列处理器支持：
 ## 服务器 GPU
 
 通过 CUDA/TensorRT 已验证 NVIDIA 以下系列：
+
+- QUADRO RTX 8000
+- GeForce RTX 3090
+- GeForce GTX 1080Ti
 
 ## NPU
 

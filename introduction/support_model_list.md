@@ -7,6 +7,10 @@ Tengine 已完成对主流的计算机视觉模型的进行支持，包括分类
 | 分类 | MobileNet V1   | ARM、X86、MIPS、GPU、NPU |
 | 检测 | MobileNet-SSD  | ARM、X86、MIPS、GPU、NPU |
 | 识别 | MobileFaceNets | ARM、X86、GPU            |
+| 识别 | YOLOv3         | ARM、X86、GPU            |
+| 识别 | YOLOv3-Tiny    | ARM、X86、GPU            |
+| 识别 | YOLOv4         | ARM、X86、GPU            |
+| 识别 | YOLOv4-Tiny    | ARM、X86、GPU            |
 | 分割 | YOLCAT         | ARM                      |
 
 **提示**：
