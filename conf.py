@@ -26,7 +26,7 @@ copyright = '2021, OPEN AI LAB'
 author = 'OPEN AI LAB'
 
 # The full version, including alpha/beta/rc tags
-release = 'v1.3'
+release = ''
 
 
 # -- General configuration ---------------------------------------------------
@@ -34,7 +34,7 @@ release = 'v1.3'
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark']
+extensions = ['recommonmark', 'sphinx_markdown_tables']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
