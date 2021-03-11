@@ -84,8 +84,8 @@ Welcome to Tengine's documentation!
   :maxdepth: 1
   :caption: API文档
 
-  api_reference/cxx_api_doc
   api_reference/c_api_doc
+  api_reference/cxx_api_doc
   api_reference/python_api_doc
 
 .. toctree::
