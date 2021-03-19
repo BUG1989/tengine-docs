@@ -46,7 +46,7 @@
 
 ## 精度 Profiler
 
-精度 Profiler，用于导出每一层的 input/ouput tensor data，在网络模型运行时统计 CPU 上 kernel 耗时信息，用于分析潜在的耗时问题。
+精度 Profiler，用于 CPU 后端运行网络模型后，导出每一层的 input/ouput tensor data，用于分析输出结果异常的问题。
 
 ### 使用方法
 

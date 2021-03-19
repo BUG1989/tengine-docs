@@ -2,13 +2,13 @@
 
 ## 简介
 
-[TIM-VX](https://github.com/VeriSilicon/TIM-VX.git) is a software integration module provided by VeriSilicon to facilitate deployment of Neural-Networks on OpenVX enabled ML accelerators.
+[TIM-VX](https://github.com/VeriSilicon/TIM-VX.git) 的全称是 Tensor Interface Module for OpenVX，是 VeriSilicon 提供的用于在支持 OpenVX 的其自研 ML 加速器 IP 上实现深度学习神经网络模型部署。它可以做为 Android NN、TensorFlow-Lite、MLIR、TVM、Tengine 等 Runtime Inference Framework 的 Backend 模块。
 
-Tengine Lite has supported to integrate with TIM-VX Library of Verisilicon to inference CNN by [Khadas VIM3](https://www.khadas.cn/product-page/vim3)(Amlogic A311D).
+Tengine 基于 [Khadas VIM3](https://www.khadas.cn/product-page/vim3)(Amlogic A311D)单板计算机，完成了 TIM-VX 的集成，充分发挥出其内置 NPU **高性能**和 Tengine 异构计算自动切图的**易用性**。
 
-## 源码准备
+## 准备工作
 
-For some special reasons, only supported on Khadas VIM3 or x86_64 simulator to work the following steps, currently.
+由于 TIM-VX 官方只提供了 A311D 的预编译库和 x86_64 NPU 模拟计算的预编译库，因此本文档只基于上述两种平台进行源码编译、安装、运行说明。
 
 ### 下载 TIM-VX 源码 
 
@@ -23,9 +23,7 @@ $ git clone https://github.com/OAID/Tengine.git tengine-lite
 $ cd tengine-lite
 ```
 
-### 编译
-
-#### x86_64 仿真平台准备工作
+### x86_64 仿真平台
 
 准备依赖文件：
 
@@ -40,7 +38,7 @@ $ cp -rf ../TIM-VX/prebuilt-sdk/x86_64_linux/lib/*    ./3rdparty/tim-vx/lib/x86_
 $ rm ./src/dev/tim-vx/src/tim/vx/*_test.cc
 ```
 
-#### Khadas VIM3 平台准备工作
+### Khadas VIM3 平台
 
 下载 TIM-VX 准备好的 A311D 预编译库：
 
@@ -63,7 +61,7 @@ $ cp -rf ../prebuild-sdk-a311d/lib/*    ./3rdparty/tim-vx/lib/aarch64/
 $ rm ./src/dev/tim-vx/src/tim/vx/*_test.cc
 ```
 
-编译命令：
+## 编译
 
 ```bash
 $ mkdir build && cd build
@@ -90,13 +88,12 @@ build-tim-vx-arm64/install/lib/
 └── libtengine-lite.so
 ```
 
-On the Khadas VIM3, it need to replace those libraries in the /lib/ 
+如果使用 Khadas VIM3 设备，需要使用上诉动态库替代板上 `/lib` 目录下的已有库文件。
 
-### 常见问题解答
-- Q: Why?
-- A: Because the firmware of Khadas VIM3 maybe pre-install old version kernel module of NPU  
-- Q: How to?
-- A: Remove the old kernel module and replace it with the new version(in the /prebuild-sdk-a311d/lib/galcore.ko) 
+- Q: 为什么替换库？
+- A: 因为在 Khadas VIM3 预装的固件中已经包含，需要更新。我们会及时同步 Khadas VIM3 原厂，尽快打包在预装固件中。  
+- Q: Khadas VIM3 需要更新驱动吗?
+- A: 是的，需要使用 TIM-VX 提供的 A311D 预编译包中的 `galcore.ko` ( /prebuild-sdk-a311d/lib/galcore.ko)内核驱动文件进行更新。
 ```
 $ rmmod galcore
 $ insmod galcore.ko
@@ -104,7 +101,7 @@ $ insmod galcore.ko
 
 ### 配置 Uint8 运行模式
 
-TIM-VX Library needs the uint8 network model
+TIM-VX 后端运行需要将 Tengine 的工作模型修改为 **uint8** 推理模式
 
 ```bash
 /* set runtime options */
@@ -138,14 +135,17 @@ Repeat 10 times, thread 1, avg time 2.95 ms, max_time 3.42 ms, min_time 2.76 ms
 30.780502, 282
 ```
 
-### 支持硬件列表
-| Vendor  | Devices      |
-| ------- | ------------ |
+## 支持硬件列表
+
+| 芯片厂家  | 设备      |
+| -------- | --------- |
 | Amlogic | A311D        |
-| NXP     | i.MX 8M Plus |
+| NXP     | iMX 8M Plus |
 | X86-64  | Simulator    |
 
-### 如何获取 uint8 模型
-The TIM-VX NPU backend needs the uint8 tmfile as it's input model file, you can **quantize** the tmfile from **float32** to **uint8** from here. 
-- [Tengine Post Training Quantization Tools](../tools/quantize/README.md)
-- [Download the uint8 quant tool](https://github.com/OAID/Tengine/releases/download/lite-v1.3/quant_tool_uint8)
+## 支持算子列表
+
+## 如何获取 uint8 模型
+如果要将网络模型运行在 Tengine + TIM-VX 支持的硬件平台上，需要将 Float32 的 tmfile 转换/压缩 成 Uint8 tmfile, 具体实现可参考以下章节. 
+- [模型量化-非对称量化](../user_guides/quant_tool_uint8.md)
+- [Uint8 量化工具下载地址](https://github.com/OAID/Tengine/releases/download/lite-v1.3/quant_tool_uint8)
