@@ -26,7 +26,7 @@ ACL 支持 **Float32** 和 **Float16** 两种精度模型进行网络模型推�
 
 Enable GPU FP32 mode
 
-```bash
+```c++
 /* set runtime options */
 struct options opt;
 opt.num_thread = num_thread;
@@ -37,7 +37,7 @@ opt.affinity = 0;
 
 Enable GPU FP16 mode
 
-```bash
+```c++
 /* set runtime options */
 struct options opt;
 opt.num_thread = num_thread;
@@ -46,13 +46,26 @@ opt.precision = TENGINE_MODE_FP16;
 opt.affinity = 0;
 ```
 
+### 后端硬件绑定
+
+在加载模型前，需要显式指定 **ACL** 硬件后端 **context**，并在调用 `graph_t create_graph(context_t context, const char* model_format, const char* fname, ...)` 时传入该参数。
+
+```c++
+/* create arm acl backend */
+acl_context = create_context("acl", 1);
+add_context_device(acl_context, "ACL");
+
+/* create graph, load tengine model xxx.tmfile */
+create_graph(acl_context, "tengine", model_file);
+```
+
 ## 参考 Demo
 
 源码请参考 [tm_classification_acl.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_acl.c)
 
 ### 执行结果
 
-```
+```bash
 [root@localhost tengine-lite]# ./tm_mssd_acl -m mssd.tmfile -i ssd_dog.jpg -t 1 -r 10
 start to run register cpu allocator
 start to run register acl allocator

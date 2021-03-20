@@ -56,7 +56,6 @@ Welcome to Tengine's documentation!
   :caption: 部署示例
   :name: sec-demo_guides
 
-  demo_guides/android_demo
   demo_guides/linux_demo
   demo_guides/opencl
   demo_guides/timvx
@@ -71,14 +70,14 @@ Welcome to Tengine's documentation!
   :name: sec-source-compile
 
   source_compile/compile_env
-  source_compile/compile_options  
-  source_compile/compile_acl
-  source_compile/compile_android
-  source_compile/compile_cuda
+  source_compile/compile_options
   source_compile/compile_linux
+  source_compile/compile_android  
+  source_compile/compile_acl
+  source_compile/compile_cuda
+  source_compile/compile_opencl  
   source_compile/compile_tensort
   source_compile/compile_timvx
-  source_compile/compile_opencl
 
 .. toctree::
   :maxdepth: 1
