@@ -25,20 +25,22 @@ release_tengine();
 
 Tengine 框架资源初始化（包含 Serializer 、Operator 等必要功能模块注册）在**当前进程中只能调用一次**。
 
-参数：`None`
+输入：
+- `None`
 
-返回：`执行结果`
+返回：
 
--  `0: 成功`
-- `-1：失败`
+-  `Int，0: 成功，-1：失败`
 
-### `void release_tengine(void);`
+### `void release_tengine(void)`
 
 Tengine 框架资源释放，在**当前进程中只能调用一次**。
 
-参数：`None`
+输入：
+- `None`
 
-返回：`None`
+返回：
+- `None`
 
 ## Graph
 
