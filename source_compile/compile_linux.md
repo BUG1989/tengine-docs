@@ -1,21 +1,5 @@
 # 源码编译（Linux）
 
-## 依赖工具安装
-
-编译 Tengine Lite 依赖 `git, g++, cmake, make` 等以下基本工具，如果没有安装，
-
-- Ubuntu18.04 系统命令如下：
-
-  ```bash
-  sudo apt-get install cmake make g++ git
-  ```
-
-- Fedora28 系统命令如下：
-
-  ```bash
-  sudo dnf install cmake make g++ git
-  ```
-
 ## 本地编译
 
 ### 下载 Tengine Lite 源码
