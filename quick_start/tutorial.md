@@ -52,19 +52,3 @@ graph TD
     E --> F(destory_graph)
     F --> O(预测结果)
 ```
-
-```flow
-st=>start: init_tengine
-op=>operation: create_graph
-op1=>operation: prerun_graph
-op2=>operation: run_graph
-op3=>operation: postrun_graph
-op4=>operation:	destory_graph
-cond=>condition: 判断框(是或否?)
-sub1=>subroutine: 子流程
-io=>inputoutput: 输入输出框
-e=>end: destory_graph
-st->op->op1->op2->op3->e
-
-```
-
