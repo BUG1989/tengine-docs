@@ -11,7 +11,7 @@ Todo
 On Ubuntu
 
 ### setup nvcc enva
-```
+```bash
 $ export CUDACXX=/usr/local/cuda/bin/nvcc
 ```
 ### build

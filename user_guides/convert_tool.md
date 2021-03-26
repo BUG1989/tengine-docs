@@ -17,12 +17,12 @@ Tengine Convert Tool 支持将多种训练框架模型转换成 Tengine 推理�
 
 ## 依赖库安装
 
-```
+```shell
 sudo apt install libprotobuf-dev protobuf-compiler
 ```
 
 ## 源码编译
-```
+```shell
 mkdir build && cd build
 cmake ..
 make -j`nproc` && make install
@@ -32,7 +32,7 @@ make -j`nproc` && make install
 ## 执行模型转换
 
 - 命令解析
-```
+```shell
 $ ./tm_convert_tool -h
 [Convert Tools Info]: optional arguments:
         -h    help            show this help message and exit
@@ -43,53 +43,54 @@ $ ./tm_convert_tool -h
 ```
 - Caffe
 
-```
+```shell
 ./tm_convert_tool -f caffe -p mobilenet.prototxt -m mobilenet.caffemodel -o mobilenet.tmfile
 ```
 
 - MXNet
 
-```
+```shell
 ./tm_convert_tool -f mxnet -p mobilenet.json -m mobilene.params -o mobileent.tmfile
 ```
 
 - ONNX
 
-```
+```shell
 ./tm_convert_tool -f onnx -m mobilenet.onnx -o mobilenet.tmfile
 ```
 
 - TensorFlow
 
-```
+```shell
 ./tm_convert_tool -f tensorflow -m mobielenet_v1_1.0_224_frozen.pb -o mobilenet.tmfile
 ```
 
 - TFLite
 
-```
+```shell
 ./tm_convert_tool -f tflite -m mobielenet.tflite -o mobilenet.tmfile
 ```
 
 - Darknet
 
-```
+```shell
 ./tm_convert_tool -f darknet -p yolov3.cfg -m yolov3.weights -o yolov3.tmfile
 ```
 
 - MegEngine
 
-```
+```shell
 ./tm_convert_tool -f megengine -m mobilenet.pkl -o mobilenet.tmfile
 ```
 
 - OneFlow
 
-```
+```shell
 ./tm_convert_tool -f oneflow -p mobilenet.prototxt -m mobilenet/ -o mobilenet.tmfile
 ```
 
 - ncnn
-```
+```shell
 ./tm_convert_tool -f ncnn -p mobilenet.param -m mobilenet.bin -o mobilenet.tmfile
 ```
+
