@@ -29,7 +29,7 @@ sudo apt install libopencv-dev
 
 ## 运行参数
 
-```
+```bash
 $ ./quant_tool_uint8 -h
 [Quant Tools Info]: optional arguments:
 -h    help            show this help message and exit
@@ -53,7 +53,7 @@ $ ./quant_tool_uint8 -h
 - 校准数据内容，尽可能的覆盖该模型的所有应用场景，一般我们的经验是从训练集中随机抽取；
 - 校准数据张数，根据经验我们建议使用 500-1000 张。
 
-```
+```bash
 $ .quant_tool_uint8  -m ./mobilenet_fp32.tmfile -i ./dataset -o ./mobilenet_uint8.tmfile -g 3,224,224 -w 104.007,116.669,122.679 -s 0.017,0.017,0.017
 
 ---- Tengine Post Training Quantization Tool ----

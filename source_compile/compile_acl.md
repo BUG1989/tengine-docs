@@ -67,7 +67,7 @@ $ make install
 
 ### Depned librarys
 
-```
+```bash
 3rdparty/acl/lib/
 ├── libarm_compute.so
 ├── libarm_compute_core.so
@@ -81,7 +81,7 @@ build-acl-arm64/install/lib/
 
 Enable GPU FP16 mode
 
-```bash
+```c
 /* set runtime options */
 struct options opt;
 opt.num_thread = num_thread;
@@ -92,7 +92,7 @@ opt.affinity = 0;
 
 ### Result
 
-```
+```bash
 [root@localhost tengine-lite]# ./tm_mssd_acl -m mssd.tmfile -i ssd_dog.jpg -t 1 -r 10
 start to run register cpu allocator
 start to run register acl allocator
