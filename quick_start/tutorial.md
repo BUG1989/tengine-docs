@@ -53,4 +53,4 @@ graph TD
     F --> O(预测结果)
 ```
 
-![image-20210331170705039](C:\Users\frenc\AppData\Roaming\Typora\typora-user-images\image-20210331170705039.png)
+![clip_image008](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.jpg)
