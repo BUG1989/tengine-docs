@@ -32,15 +32,11 @@ Tengine模型为后缀 ”.tmfile”文件，由Tengine: Covert Tool通过其他
 
 
 
- 
-
 # 2   Model Properties
 
 进入Netron界面后，点左上角图标或点击灰色节点（如图1中红色标记所示），弹出右侧边栏：Model Properties。
 
- 
-
-| ![img](../images/clip_image002.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image002.jpg) |
 | ----------------------------------- |
 | 图1  模型信息 Model Properties      |
 
@@ -80,7 +76,7 @@ Convolution算子默认显示weight和bias维度信息。
 
  
 
-| ![img](../images/clip_image004.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image004.jpg) |
 | ----------------------------------- |
 | 图2  模型绘图                       |
 
@@ -96,7 +92,7 @@ Convolution算子默认显示weight和bias维度信息。
 
 算子具有类型type、名称name、属性ATTRIBUTES及输入INPUTS、输出OUTPUTS。
 
-| ![img](../images/clip_image006.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image006.jpg) |
 | ----------------------------------- |
 | 图2  模型绘图                       |
 
