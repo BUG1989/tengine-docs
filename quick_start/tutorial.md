@@ -52,3 +52,5 @@ graph TD
     E --> F(destory_graph)
     F --> O(预测结果)
 ```
+
+![clip_image008](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.jpg)
