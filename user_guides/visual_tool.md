@@ -40,7 +40,7 @@ Tengine模型为后缀 ”.tmfile”文件，由Tengine: Covert Tool通过其他
 
  
 
-| ![img](file:///C:/Users/frenc/AppData/Local/Temp/msohtmlclip1/01/clip_image002.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image002.jpg) |
 | ------------------------------------------------------------ |
 | 图1  模型信息 Model Properties                               |
 
@@ -80,7 +80,7 @@ Convolution算子默认显示weight和bias维度信息。
 
  
 
-| ![img](file:///C:/Users/frenc/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image004.jpg) |
 | ------------------------------------------------------------ |
 | 图2  模型绘图                                                |
 
@@ -96,7 +96,7 @@ Convolution算子默认显示weight和bias维度信息。
 
 算子具有类型type、名称name、属性ATTRIBUTES及输入INPUTS、输出OUTPUTS。
 
-| ![img](file:///C:/Users/frenc/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg) |
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image006.jpg) |
 | ------------------------------------------------------------ |
 | 图2  模型绘图                                                |
 

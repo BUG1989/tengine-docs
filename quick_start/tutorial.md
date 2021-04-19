@@ -1,15 +1,15 @@
 # Tengine 推理流程
 依照顺序调用Tengine核心API如下：
 
-1. <font color=blue>init_tengine</font>
+## 1. <font color=blue>init_tengine</font>
 
 初始化Tengine，该函数在程序中只要调用一次即可。
 
-2. <font color=blue>create_graph</font>
+## 2. <font color=blue>create_graph</font>
 
 创建Tengine计算图。
 
-3. <font color=blue>prerun_graph</font>
+## 3. <font color=blue>prerun_graph</font>
 
 预运行，准备计算图推理所需资源。设置大小核，核个数、核亲和性、数据精度都在这里。
 
@@ -25,20 +25,22 @@ struct options
 
 
 
-4. <font color=blue>run_graph</font>
+## 4. <font color=blue>run_graph</font>
 
 启动Tengine计算图推理。
 
-5. <font color=blue>postrun_graph</font>
+## 5. <font color=blue>postrun_graph</font>
 
 停止运行graph，并释放graph占据的资源。
 
-6. <font color=blue>destroy_graph</font>
+## 6. <font color=blue>destroy_graph</font>
 
 销毁graph。
 
 postrun_graph和destroy_graph在执行完模型推理后调用，一般是连续调用。
+使用markdown流程图mermaid表示如下：
 
+>
 ```mermaid
 graph TD
 	A(init_tengine)
@@ -52,5 +54,5 @@ graph TD
     E --> F(destory_graph)
     F --> O(预测结果)
 ```
-
-![clip_image008](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.jpg)
+>
+![clip_image008](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.png)

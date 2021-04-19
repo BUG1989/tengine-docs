@@ -72,10 +72,10 @@ opt.affinity = 0;
 
 ## 参考 Demo
 
-源码请参考 [tm_classification.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification.c)
-源码请参考 [tm_classification_fp16.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_fp16.c)
-源码请参考 [tm_classification_uint8.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_uint8.c)
-源码请参考 [tm_classification_int8.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_int8.c)
+- 源码请参考 [tm_classification.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification.c)
+- 源码请参考 [tm_classification_fp16.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_fp16.c)
+- 源码请参考 [tm_classification_uint8.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_uint8.c)
+- 源码请参考 [tm_classification_int8.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_int8.c)
 
 ### 使用 C API 预测
 
