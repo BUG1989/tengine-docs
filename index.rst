@@ -57,6 +57,7 @@ Welcome to Tengine's documentation!
   :name: sec-demo_guides
 
   demo_guides/linux_demo
+  demo_guides/android_demo
   demo_guides/opencl
   demo_guides/timvx
   demo_guides/acl

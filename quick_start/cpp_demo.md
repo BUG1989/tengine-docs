@@ -1,8 +1,5 @@
 # C++ 完整示例
 
-本章节包含2部分内容，（1）C++示例程序；（2）C++应用开发说明。
-
-# C++示例程序
 本章节展示的所有C++示例位于[examples](https://github.C++om/OAID/Tengine/tree/tengine-lite/examples) 。
 
 ## 1.环境准备
@@ -16,34 +13,33 @@
 
 | Arch  | with_extra | arm_stl    | with_cv | 下载                                      |
 | ----- | ---------- | ---------- | ------- | ----------------------------------------- |
-| armv8 | OFF        | c++_static |         | (<font size=4 color=orange>待补充</font>) |
-| armv7 | OFF        |            |         | (<font size=4 color=orange>待补充</font>) |
+| ARMv8 | OFF        | c++_static |         | (<font size=4 color=orange>待补充</font>) |
+| ARMv7 | OFF        |            |         | (<font size=4 color=orange>待补充</font>) |
 | x86   | OFF        |            |         | (<font size=4 color=orange>待补充</font>) |
 
-**解压后内容结构如下：**(<font size=4 color=orange>待补充</font>)
+**以ARMv8架构为例，解压后内容结构如下：**(<font size=4 color=orange>待补充</font>)
 
 ```shell
-inference_lite_lib.cpp.armv8          Tengine-Lite 预测库
-├── cxx                                       C++ 预测库
-│   ├── include                                   C++ 预测库头文件
-│   └── lib                                       C++ 预测库文件
-│       ├── libpaddle_api_light_bundled.a             静态预测库
-│       └── libpaddle_light_api_shared.so             动态预测库
-├── demo                                      示例 Demo
-│   └── cxx                                       C++ 示例 Demo
-└── cppLib                                      		C++ 预测库
+tengine_lite_lib.cxx.armv8           Tengine-Lite 预测库
+├── cxx                              C++预测库
+│   ├── include                      C++预测库头文件
+│   └── lib                          C++预测库文件
+│       ├── libtengine-lite.a        静态预测库
+│       └── libtengine-lite.so       动态预测库
+└── demo                             示例 Demo
+    └── cxx                          C++示例 Demo
 ```
 
-### 3. 准备预测部署模型
+## 3. 准备预测部署模型
 
 (1) 模型下载：下载mobilenet_v1(<font size=4 color=orange>待补充</font>)模型后解压，可得到.tmfile后缀的模型文件。可通过模型可视化工具[Netron](https://lutzroeder.github.io/netron/)打开文件夹下的model文件，查看模型结构。
 
-### 4. 编译预测示例程序
+## 4. 编译预测示例程序
 
 export LD_LIBRARY_PATH=(<font size=4 color=orange>待补充</font>)
 
 g++ -I(<font size=4 color=orange>待补充</font>) -L(<font size=4 color=orange>待补充</font>) -l(<font size=4 color=orange>待补充</font>) cpp_tm_classification.cpp -o  cpp_tm_classification
-### 5.执行预测
+## 5.执行预测
 
 ```bash
 export LD_LIBRARY_PATH=./build-linux-x86/install/lib
