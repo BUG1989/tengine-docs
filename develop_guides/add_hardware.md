@@ -245,9 +245,9 @@ static struct interface tpu_interface = {
 ```
 `tpu_dev_init()` 是设备的全局初始化函数，注册设备时调用一次，反注册调用 `release_device()`。这个函数一般用来预申请设备内存作全局缓存，与设备驱动互操作初始化一些寄存器等。
 `tpu_dev_prerun()` 是网络预处理部分，常见的处理包含申请 `tensor` 内存、转换数据 `layout`、创建设备运行图、编译设备 `kernel` 等。这部分申请的空间等需要在 `tpu_release_graph()` 中进行清理。
-`tpu_post_run()` 与 `tpu_release_graph()` 可能会引发混淆，`tpu_post_run()` 常常用来只是清除运行一次的相关状态，与 `tpu_dev_prerun()` 相反，真正的释放工作可以放到 `tpu_release_graph()` 中进行。一个可能的场景是，运行一次分辨率的模型 tpu_dev_prerun()` 后，换一个分辨率前运行 `tpu_post_run()`，然后再运行 `tpu_dev_prerun()`。当需要真正销毁时，运行 `tpu_release_graph()`。
+`tpu_post_run()` 与 `tpu_release_graph()` 可能会引发混淆，`tpu_post_run()` 常常用来只是清除运行一次的相关状态，与 `tpu_dev_prerun()` 相反，真正的释放工作可以放到 `tpu_release_graph()` 中进行。一个可能的场景是，运行一次分辨率的模型 `tpu_dev_prerun()` 后，换一个分辨率前运行 `tpu_post_run()`，然后再运行 `tpu_dev_prerun()`。当需要真正销毁时，运行 `tpu_release_graph()`。
 
-`ir_device_t` 结构体中，`struct interface` 结构体描述了基本 `API` 接口， `struct allocator` 描述了设备能力上报接口和评估和调度的接口，`struct optimizer` 描述了切图和优化相关的接口，`struct scheduler` 描述了调度相关的接口。这几个接口的核心是 `struct scheduler`，设备并不总假设实现一个 `struct scheduler`，如果设备的这个接口描述是 `nullptr`，那么引擎会使用默认注册的 "**`sync scheduler`** 运行网络，详情参考 `source/scheduler/scheduler.c` 中的 `static ir_scheduler_t sync_scheduler`。用户也可以实现一份自己的 `struct scheduler` 来完成特殊的任务；结合 `struct allocator` 和 `struct optimizer` 可以产生丰富的可能。下面的描述是假设用户不实现 `struct scheduler` 的情况下的逻辑。
+`ir_device_t` 结构体中，`struct interface` 结构体描述了基本 `API` 接口， `struct allocator` 描述了设备能力上报接口和评估和调度的接口，`struct optimizer` 描述了切图和优化相关的接口，`struct scheduler` 描述了调度相关的接口。这几个接口的核心是 `struct scheduler`，设备并不总假设实现一个 `struct scheduler`，如果设备的这个接口描述是 `nullptr`，那么引擎会使用默认注册的 **`sync scheduler`** 运行网络，详情参考 `source/scheduler/scheduler.c` 中的 `static ir_scheduler_t sync_scheduler`。用户也可以实现一份自己的 `struct scheduler` 来完成特殊的任务；结合 `struct allocator` 和 `struct optimizer` 可以产生丰富的可能。下面的描述是假设用户不实现 `struct scheduler` 的情况下的逻辑。
 
 
 ``` cmake

@@ -34,9 +34,6 @@ Return：
 Brief：
 - `Release the tengine, only can be called once.`
 
-Return：
-- `None`
-
 ### `const char* get_tengine_version(void)`
 
 Brief：
@@ -343,6 +340,19 @@ Params：
 
 Return：
 - `>=1 the valid dim number, or -1 Fail.`
+
+### `int set_tensor_shape(tensor_t tensor, const int dims[], int dim_number)`
+
+Brief：
+- `Set the shape of tensor.`
+
+Params：
+- `tensor: The tensor handle.`
+- `dims: An int array to get the returned shape.`
+- `dim_number: The array size.`
+
+Return：
+- `0: Success; -1: Fail.`
 
 ## Device
 
