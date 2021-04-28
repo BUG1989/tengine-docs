@@ -1,9 +1,5 @@
 # 源码编译（TensorRT）
 
-## Brief
-
-Todo
-
 ## How to build
 
 ### Build for Linux

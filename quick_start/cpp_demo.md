@@ -8,7 +8,7 @@
 
 
 ## 2.下载预编译的预测库
-下载Tengine-Lite预编译库，
+下载Tengine预编译库，
 请根据你的架构选择正确的版本
 
 | Arch  | with_extra | arm_stl    | with_cv | 下载                                      |
@@ -20,7 +20,7 @@
 **以ARMv8架构为例，解压后内容结构如下：**(<font size=4 color=orange>待补充</font>)
 
 ```shell
-tengine_lite_lib.cxx.armv8           Tengine-Lite 预测库
+tengine_lite_lib.cxx.armv8           Tengine 预测库
 ├── cxx                              C++预测库
 │   ├── include                      C++预测库头文件
 │   └── lib                          C++预测库文件

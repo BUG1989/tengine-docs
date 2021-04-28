@@ -1,9 +1,5 @@
 # 源码编译（CUDA）
 
-## Brief
-
-Todo
-
 ## How to build
 
 ### Build for Linux

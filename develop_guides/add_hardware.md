@@ -3,11 +3,11 @@
 ------
 
 ## 背景知识
-**Tengine Lite** 在设计上讲可扩展性作为第一优先级纳入考量，较早的版本注册机制依赖 `GCC GNU` 扩展，而 `GNU` 扩展并不是标准 `C` 的内容。当社区呼唤需要扩展支持到 `Microsoft Visual Studio` 上时，遇到了较多的困难。
+**Tengine** 在设计上讲可扩展性作为第一优先级纳入考量，较早的版本注册机制依赖 `GCC GNU` 扩展，而 `GNU` 扩展并不是标准 `C` 的内容。当社区呼唤需要扩展支持到 `Microsoft Visual Studio` 上时，遇到了较多的困难。
 在决定重新设计后，注册模块的易用性有了很大的提升。新的机制通过 `CMake` 额外的处理过程，取得类似遍历和注册的效果，完成模块的注册。具体的设计和改进可以参考**架构详解**中的**重要模块介绍**。
 
-**Tengine Lite** 在设计上将所有可以运行 `CNN` 的硬件单元均视为设备，`CPU` 就是一个典型的设备，在所有的编译选项里，`CPU` 设备都是默认包含的。如果描述一个新设备并注册，通常意义上这潜在上意味着要求编译的 **Tengine Lite** 支持异构设备切图(相关内容可以阅读**混合设备**部分)；如果注册的设备也描述了**混合精度**的接口，那么设备还支持**混合精度**。
-**Tengine Lite** 通过一个嵌套的结构体完成一个设备的描述：
+**Tengine** 在设计上将所有可以运行 `CNN` 的硬件单元均视为设备，`CPU` 就是一个典型的设备，在所有的编译选项里，`CPU` 设备都是默认包含的。如果描述一个新设备并注册，通常意义上这潜在上意味着要求编译的 **Tengine** 支持异构设备切图(相关内容可以阅读**混合设备**部分)；如果注册的设备也描述了**混合精度**的接口，那么设备还支持**混合精度**。
+**Tengine** 通过一个嵌套的结构体完成一个设备的描述：
 ``` C
 /*!
  * @struct nn_device_t
@@ -24,7 +24,7 @@ typedef struct device
 } ir_device_t;
 ```
 从结构体 `ir_device_t` 上可以看出，设计上将一个设备(`device`)分成 6 部分，第一部分 `name` 描述了设备的名字，设备名字不允许重复；`interface` 描述了设备接口；`allocator`描述了设备相关子图的操作；`optimizer` 描述了切图和混合精度的接口；`scheduler` 描述了设备独特的调度接口。
-以上接口通常不需要全部填充，**Tengine Lite** 提供一组丰富的示例指导如何自定义并添加用户自己的设备。
+以上接口通常不需要全部填充，**Tengine** 提供一组丰富的示例指导如何自定义并添加用户自己的设备。
 
 -----------------------------------------------
 
@@ -122,7 +122,7 @@ AUX_SOURCE_DIRECTORY("${_TPU_ROOT}/op" _TPU_OPS_SOURCE)
 LIST (APPEND _DEV_TPU_DEVICE_SOURCE    ${_TPU_BASE_SOURCE})
 LIST (APPEND _DEV_TPU_DEVICE_SOURCE    ${_TPU_OPS_SOURCE})
 ```
-接下来的部分是编译相关的选项，根据实际情况修改即可。**Tengine Lite** 默认打开了 C/C++ 支持，并尝试打开标准到 `C99/C++14`，如果工具链不支持会降级为 `C98/C++11`；如果用户的代码有其他特殊要求可以根据情况调整 `_DEV_TPU_COMPILER_DEFINES`，`_DEV_TPU_COMPILER_OPTIONS`,`_DEV_TPU_LINKER_OPTIONS` 这 3 个变量。
+接下来的部分是编译相关的选项，根据实际情况修改即可。**Tengine** 默认打开了 C/C++ 支持，并尝试打开标准到 `C99/C++14`，如果工具链不支持会降级为 `C98/C++11`；如果用户的代码有其他特殊要求可以根据情况调整 `_DEV_TPU_COMPILER_DEFINES`，`_DEV_TPU_COMPILER_OPTIONS`,`_DEV_TPU_LINKER_OPTIONS` 这 3 个变量。
 ``` cmake
 # 5.  add build options for cpu device
 # 5.1 is a gcc or clang like compiler
@@ -274,7 +274,7 @@ static struct optimizer tpu_optimizer = {
 最后，需要编写注册函数和反注册函数 `int register_tpu_device()` 和 `int unregister_tpu_device()`，需要注意的是注册函数和反注册函数的后半段就是文件名，需要和实际文件名匹配，CMake 会自动的完成注册函数的调用过程的链接。
 
 ## 总结
-通过上文的描述，可以知道添加一个自定义设备的核心工作就是填充 `ir_device_t` 结构体，描述完成后，设备注册的所有工作就完成了。模块化的 `device` 使得 **Tengine Lite** 非常易于扩展，并有足够的灵活性。
+通过上文的描述，可以知道添加一个自定义设备的核心工作就是填充 `ir_device_t` 结构体，描述完成后，设备注册的所有工作就完成了。模块化的 `device` 使得 **Tengine** 非常易于扩展，并有足够的灵活性。
 
 ## 彩蛋
 `init_tengine(void)` 函数中，当 `operator prototype` 完成注册后，注册的就是 `serializer` 和 `devices`，但在静态代码状态下函数并不会跳转，用户可以安装一款集成开发环境，比如 `Microsoft Visual Studio` 或 `Jetbrains Clion`，打开文件夹后生成 `CMake` 过程后即可进行跳转。

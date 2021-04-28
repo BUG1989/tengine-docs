@@ -25,7 +25,6 @@ Welcome to Tengine's documentation!
   :caption: Benchmark
   :name: sec-benchmark
   
-  benchmark/benchmark
   benchmark/benchmark_tools
 
 .. toctree::
@@ -34,11 +33,7 @@ Welcome to Tengine's documentation!
   :name: sec-quick-start
 
   quick_start/tutorial
-  quick_start/release_lib
   quick_start/c_demo
-  quick_start/cpp_demo
-  quick_start/python_demo
-  quick_start/ptq_demo
 
 .. toctree::
   :maxdepth: 1
@@ -63,7 +58,6 @@ Welcome to Tengine's documentation!
   demo_guides/acl
   demo_guides/tensort
   demo_guides/cuda
-  demo_guides/nnie
 
 .. toctree::
   :maxdepth: 1
@@ -85,15 +79,11 @@ Welcome to Tengine's documentation!
   :caption: API文档
 
   api_reference/c_api_doc
-  api_reference/cxx_api_doc
-  api_reference/python_api_doc
 
 .. toctree::
   :maxdepth: 1
   :caption: 开发者贡献
 
-  develop_guides/architecture-intro
-  develop_guides/add_operation
   develop_guides/add_hardware
 
 .. toctree::
@@ -102,9 +92,3 @@ Welcome to Tengine's documentation!
   :name: sec-roadmap
 
   introduction/roadmap
-
-.. toctree::
-  :maxdepth: 1
-  :caption: FAQ
-
-  introduction/faq

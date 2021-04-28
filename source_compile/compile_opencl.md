@@ -2,7 +2,7 @@
 
 ## How to build
 
-### Setup Tengine-Lite project ROOT_PATH
+### Setup Tengine project ROOT_PATH
 
 ```
 $ export ROOT_PATH={Path of tengine-lite}
@@ -25,10 +25,3 @@ $ cmake \
 $ make -j4
 $ make install
 ```
-
-## Demo
-
-```
-Todo
-```
-

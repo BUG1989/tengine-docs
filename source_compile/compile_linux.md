@@ -2,18 +2,18 @@
 
 ## 本地编译
 
-### 下载 Tengine Lite 源码
+### 下载 Tengine 源码
 
-下载 Tengine Lite 源码，位于 Tengine 的分支 tengine-lite 上：
+下载 Tengine 源码，位于 Tengine 的分支 tengine-lite 上：
 
 ```bash
-git clone -b tengine-lite https://github.com/OAID/Tengine.git  Tengine-Lite
+git clone -b tengine-lite https://github.com/OAID/Tengine.git  Tengine
 ```
 
-### 编译 Tengine Lite
+### 编译 Tengine
 
 ```bash
-cd Tengine-Lite
+cd Tengine
 mkdir build 
 cd build
 cmake ..
@@ -40,7 +40,7 @@ install
 ### 下载源码
 
 ```bash
-git clone -b tengine-lite https://github.com/OAID/Tengine.git  Tengine-Lite
+git clone -b tengine-lite https://github.com/OAID/Tengine.git  Tengine
 ```
 
 ### 安装交叉编译工具链
@@ -57,12 +57,12 @@ Arm32 Linux 交叉编译工具链为：
 sudo apt install g++-arm-linux-gnueabihf
 ```
 
-### 编译 Tengine Lite
+### 编译 Tengine
 
 Arm64 Linux 交叉编译
 
 ```bash
-cd Tengine-Lite
+cd Tengine
 mkdir build 
 cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=../toolchains/aarch64-linux-gnu.toolchain.cmake ..
@@ -73,7 +73,7 @@ make install
 Arm32 Linux 交叉编译
 
 ```bash
-cd Tengine-Lite
+cd Tengine
 mkdir build 
 cd build
 cmake -DCMAKE_TOOLCHAIN_FILE=../toolchains/arm-linux-gnueabihf.toolchain.cmake ..

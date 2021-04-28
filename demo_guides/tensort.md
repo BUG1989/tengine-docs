@@ -2,10 +2,7 @@
 
 ## 编译
 
-参考 [源码编译（TensorRT）](../source_compile/compile_tensort.md) 章节生成部署所需要的以下库文件：
-
-待补充
-
+参考 [源码编译（TensorRT）](../source_compile/compile_tensort.md) 章节。
 ## 运行
 
 ### 模型格式

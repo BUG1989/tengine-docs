@@ -4,7 +4,7 @@
 
 The ARM Compute Library(ACL) is a set of computer vision and machine learning functions optimised for both Arm CPUs and GPUs using SIMD technologies.
 
-Tengine Lite has supported to integrate with OpenCL Library of ACL to inference CNN by ARM-Mail GPU.
+Tengine has supported to integrate with OpenCL Library of ACL to inference CNN by ARM-Mail GPU.
 
 support check:
 
@@ -34,11 +34,11 @@ Build ACL
 $ scons Werror=1 -j4 debug=0 asserts=1 neon=0 opencl=1 embed_kernels=1 os=linux arch=arm64-v8a
 ```
 
-### Download Tengine Lite
+### Download Tengine
 
 ```bash
-$ git clone https://github.com/OAID/Tengine.git Tengine-Lite
-$ cd Tengine-Lite
+$ git clone https://github.com/OAID/Tengine.git Tengine
+$ cd Tengine
 ```
 
 ### Create depend files
@@ -47,10 +47,10 @@ $ cd Tengine-Lite
 $ cd <tengine-lite-root-dir>
 $ mkdir -p ./3rdparty/acl/lib
 $ mkdir -p ./3rdparty/acl/include
-$ cp -rf ComputeLibrary/include/*    Tengine-Lite/3rdparty/acl/include
-$ cp -rf ComputeLibrary/arm_compute  Tengine-Lite/3rdparty/acl/include
-$ cp -rf ComputeLibrary/support      Tengine-Lite/3rdparty/acl/include
-$ cp -rf ComputeLibrary/build/libarm_compute*.so Tengine-Lite/3rdparty/acl/lib/
+$ cp -rf ComputeLibrary/include/*    Tengine/3rdparty/acl/include
+$ cp -rf ComputeLibrary/arm_compute  Tengine/3rdparty/acl/include
+$ cp -rf ComputeLibrary/support      Tengine/3rdparty/acl/include
+$ cp -rf ComputeLibrary/build/libarm_compute*.so Tengine/3rdparty/acl/lib/
 ```
 
 ### Build option

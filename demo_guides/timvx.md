@@ -91,16 +91,13 @@ Repeat 10 times, thread 1, avg time 2.95 ms, max_time 3.42 ms, min_time 2.76 ms
 30.780502, 282
 ```
 
-## 常见异常及解决方案
-
-待补充...
-
 ## 支持硬件列表
 
 | 芯片厂家  | 设备      |
 | -------- | --------- |
-| Amlogic | A311D        |
+| Amlogic | A311D、S905D3        |
 | NXP     | iMX 8M Plus |
+| JLQ     | JA310 |
 | X86-64  | Simulator    |
 
 ## 支持算子列表

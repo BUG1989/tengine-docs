@@ -93,4 +93,3 @@ $ ./tm_convert_tool -h
 ```shell
 ./tm_convert_tool -f ncnn -p mobilenet.param -m mobilenet.bin -o mobilenet.tmfile
 ```
-
