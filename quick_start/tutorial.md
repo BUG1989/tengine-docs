@@ -58,4 +58,4 @@ graph TD
 
 | ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.png)|
 | ------------------------------------------------------------ |
-| Figure 1 推理流程图                               |
+| 图1 推理流程图                               |
