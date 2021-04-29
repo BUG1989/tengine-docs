@@ -55,4 +55,7 @@ graph TD
     F --> O(预测结果)
 ```
 >
-![clip_image008](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.png)
+
+| ![img](https://raw.githubusercontent.com/BUG1989/tengine-docs/main/images/clip_image008.png)|
+| ------------------------------------------------------------ |
+| Figure 1 Inference Process                               |
