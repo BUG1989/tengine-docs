@@ -67,6 +67,7 @@ Welcome to Tengine's documentation!
   source_compile/compile_env
   source_compile/compile_options
   source_compile/compile_linux
+  source_compile/compile_vs
   source_compile/compile_android  
   source_compile/compile_acl
   source_compile/compile_cuda
@@ -84,6 +85,7 @@ Welcome to Tengine's documentation!
   :maxdepth: 1
   :caption: 开发者贡献
 
+  develop_guides/architecture-intro
   develop_guides/add_hardware
 
 .. toctree::

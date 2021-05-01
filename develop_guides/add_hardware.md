@@ -28,7 +28,7 @@ typedef struct device
 
 -----------------------------------------------
 
-## 一步一步添加一个自定义设备
+## 添加自定义设备
 ### 创建目录，编写 CMakeLists 文件
 首先在`source/device`创建一个以用户设备命名的文件夹，文件夹可以是用户的设备缩写或其他用户认为比较酷的名字(这里假设起名为`TPU`，那么目录就是`source/device/tpu`)，并从其他已经实现的 `device/xxx` 目录中复制一份 `CMakeLists.txt` 文件到当前文件夹；现在只需要对此 `CMakeLists.txt` 做些微的修改，而不需要从头创建。我们以从 `source/device/acl/CMakeLists.txt` 复制一份为例进行说明。该文件完整示例如下：
 ``` cmake
