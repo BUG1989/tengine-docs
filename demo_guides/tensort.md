@@ -61,7 +61,7 @@ create_graph(trt_context, "tengine", model_file);
 
 ## 参考 Demo
 
-源码请参考 [tm_classification_tensorrt.c](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_tensorrt.c)
+源码请参考 [tm_classification_trt.cpp](https://github.com/OAID/Tengine/blob/tengine-lite/examples/tm_classification_trt.cpp)
 
 ### 执行结果
 
