@@ -1,5 +1,5 @@
 # 模型量化-非对称量化
-为了支持在 AIoT 设备上部署 int8 模型，我们提供了一些通用的 post training quantization 工具，可以将 Float32 tmfile 模型转换为 int8 tmfile 模型。
+为了支持在 AIoT 设备上部署 uint8 模型，我们提供了一些通用的 post training quantization 工具，可以将 Float32 tmfile 模型转换为 int8 tmfile 模型。
 
 ## 非对称分层量化
 
@@ -15,7 +15,7 @@
 ## 适配硬件
 
 - CPU Uint8 mode
-- TIM-VX NPU（such as A311D、i.MX8M Plus、RK1126？）
+- TIM-VX NPU（such as A311D、i.MX8M Plus、RV1126？）
 
 ## 下载
 
