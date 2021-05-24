@@ -30,5 +30,11 @@ Tengine 已完成对主流的计算机视觉模型的进行支持，包括分类
 
 **提示**：
 
-- 模型链接来自 Tengine Model ZOO，我们将持续更新;
+- 模型链接来自 Tengine Model Zoo，我们将持续更新;
 - 支持平台列表中的 NPU 中，部分模型采用异构计算实现，即 CPU+NPU。
+
+**模型仓库**
+
+- [百度网盘](https://pan.baidu.com/s/1JsitkY6FVV87Kao6h5yAmg) （提取码：7ke5）
+
+- [Google Drive](https://drive.google.com/drive/folders/1hunePCa0x_R-Txv7kWqgx02uTCH3QWdS?usp=sharing)
