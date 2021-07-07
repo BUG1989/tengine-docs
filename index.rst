@@ -87,6 +87,7 @@ Welcome to Tengine's documentation!
 
   develop_guides/architecture-intro
   develop_guides/add_hardware
+  develop_guides/add_operator_opencl
 
 .. toctree::
   :maxdepth: 1
