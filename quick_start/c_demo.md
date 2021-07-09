@@ -1,16 +1,7 @@
 # 示例展示
 
 本章节展示的所有示例位于[examples](https://github.com/OAID/Tengine/tree/tengine-lite/examples) 。
-- [分类任务](#分类任务---tm_classificationc)
-- [人脸关键点检测任务](#人脸关键点检测任务---tm_landmarkcpp)
-- [retinaface 人脸检测任务](#retinaface-人脸检测任务---tm_retinafacecpp)
-- [yolact 实例分割任务](#yolact-实例分割任务---tm_yolactcpp)
-- [unet 图像分割任务](#unet-图像分割任务---tm_unetcpp)
-- [yolov5s 目标检测任务](#yolov5s目标检测任务---tm_yolov5scpp)
-- [hrnet 人体姿态识别任务](#hrnet人体姿态识别任务---tm_hrnetcpp)
-- [crnn 汉字识别任务](#汉字识别任务---tm_crnncpp)
 
-----------
 ## 准备工作
 ### 环境准备
 要编译和运行示例程序，你需要准备:
@@ -87,8 +78,6 @@ install
 Tengine Lite 兼容 Tengine 原有的 C API 供用户使用，这里我们使用 C API 展示如何运行 tm_classification 例程运行 MobileNet v1 分类网络模型，实现指定图片分类的功能。让你快速上手 Tengine Lite C API。这里，我们使用在这个撸猫时代行业从业者大爱的 tiger cat 作为测试图片。
 
 ![](https://z3.ax1x.com/2021/06/30/RBIQIO.jpg)
-
-### 运行结果
 
 将测试图片和模型文件放在 Tengine-Lite 根目录下，运行：
 
